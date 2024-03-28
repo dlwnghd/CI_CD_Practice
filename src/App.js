@@ -1,25 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+function App(n) {
+  if(n < 0){
+    throw new Error('Factorial is only defined for non-negative integers!');
+  }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  if(n === 0) {
+    return 1;
+  }
+
+  return n * App(n-1);
 }
 
 export default App;
