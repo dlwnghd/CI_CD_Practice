@@ -63,7 +63,14 @@
           - uses: actions/checkout@v3
           - uses: actions/setup-node@v3
             with:
-              node-version: '14'
+              node-version: '20'
           - run: npm install -g bats
           - run: bats -v
   ```
+  - 내부 코드의 변화에 따라 어떤 이벤트에 따라 실행하도록 코드를 수정할 수 있다.
+    - 위 코드의 경우 [push] 이벤트가 발생했을 때 해당 작업을 실행하도록 작성되어 있다.
+3. Push 이벤트를 통해 해당 작업이 수행됨을 확인할 수 있다.
+- ex. ![CI/CD example1](https://github.com/dlwnghd/CI_CD_Practice/assets/61799492/f3d21fdc-4db8-4113-bbc3-5847e3bf9d27)
+  - 코드 실행의 결과에 따라 성공 혹은 실패로 나뉘어 진다.
+- test의 경우 package.json 파일의 `scripts` 부분을 수정하여 cmd를 통해 테스트를 할 수도 있다.
+  - ex. 특정 테스트만을 실행하고자 한다면 `npm test <파일명 이나 경로>` => `npm test calculate.test.js`
