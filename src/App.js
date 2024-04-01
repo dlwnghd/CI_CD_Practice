@@ -1,20 +1,26 @@
+import CountButtons from "components/CountButtons";
+import CountView from "components/CountView";
+import { useState } from "react";
+
 function App() {
+  const [count, setCount] = useState(0);
+
+  const incrementHandler = () => {
+    setCount((count) => count + 1);
+  };
+
+  const decrementtHandler = () => {
+    setCount((count) => count - 1);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <CountView count={count} />
+      <CountButtons
+        incrementFn={incrementHandler}
+        decrementFn={decrementtHandler}
+      />
+    </>
   );
 }
 
