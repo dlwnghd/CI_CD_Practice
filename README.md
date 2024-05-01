@@ -74,3 +74,7 @@
   - 코드 실행의 결과에 따라 성공 혹은 실패로 나뉘어 진다.
 - test의 경우 package.json 파일의 `scripts` 부분을 수정하여 cmd를 통해 테스트를 할 수도 있다.
   - ex. 특정 테스트만을 실행하고자 한다면 `npm test <파일명 이나 경로>` => `npm test calculate.test.js`
+
+---
+
+# PR TEMPLATE 추가 테스트
